@@ -4,10 +4,24 @@ Craft plugin to allow access to Craft's logging functionality from templates.
 
 ## Usage
 
-`{{ craft.logger.log([message][type][force]) }}`
+`{{ craft.logger.log([message][force]) }}` (defaults to info)
+
+`{{ craft.logger.info([message][force]) }}`
+
+`{{ craft.logger.error([message][force]) }}`
+
+`{{ craft.logger.warning([message][force]) }}`
+
+`{{ craft.logger.profile([message][force]) }}`
 
 ## Examples
 
-`{{ craft.logger.log("A sample log message of type info") }}`
-`{{ craft.logger.log("A logged warning", "warning") }}`
-`{{ craft.logger.log("An info message that has been forced", "info", "true") }}`
+`{{ craft.logger.info("Info message here.") }}`
+
+`{{ craft.logger.warning("Warning message here.") }}`
+
+`{{ craft.logger.error("Error message here.") }}`
+
+`{{ craft.logger.profile("Profile message here.") }}`
+
+`{{ craft.logger.info("Info message here (forced).", "true") }}`
