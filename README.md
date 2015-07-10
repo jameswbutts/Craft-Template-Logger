@@ -25,3 +25,13 @@ Craft plugin to allow access to Craft's logging functionality from templates.
 `{{ craft.logger.profile("Profile message here.") }}`
 
 `{{ craft.logger.info("Info message here (forced).", "true") }}`
+
+## Changelog
+
+### 1.0.1 (2015-07-09)
+
+Add template guess to error messages
+
+### 1.0.0 (2015-07-07)
+
+Initial Release

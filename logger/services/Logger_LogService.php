@@ -16,15 +16,22 @@ class Logger_LogService extends BaseApplicationComponent
      * @param string $message Message to log
      * @param string $type (optional) Type of log to add
      * @param bool $force (optional) Force the log, even when not in dev mode
+     * @param bool $includeTrace (optional) Include the stack trace to guess at the calling template
      * @return void
      */
-    public function createLog($message = null, $type = null, $force = false)
+    public function createLog($message = null, $type = null, $force = false, $includeTrace = false)
     {
         if (empty($message)) {
             return;
         }
 
-        $logMessage = 'Logger Plugin: ' . $message . ' -- ' . craft()->request->requestUri;
+        $logMessage = "Logger Plugin: " . $message;
+        $logMessage .= "\nURI: " . craft()->request->requestUri;
+
+        if ($includeTrace) {
+            $logMessage .= "\nTemplate Guess: " . Logger_TraceHelper::getCallingTemplateName();
+        }
+
         $forceLog   = filter_var($force, FILTER_VALIDATE_BOOLEAN);
 
         switch (strtolower($type)) {

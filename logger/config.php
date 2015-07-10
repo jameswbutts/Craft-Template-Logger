@@ -11,7 +11,7 @@
 return array(
     // Plugin Settings
     'pluginName'         => 'Logger',
-    'pluginVersion'      => '1.0',
+    'pluginVersion'      => '1.0.1',
     'pluginDeveloper'    => 'Jim Butts',
     'pluginDeveloperUrl' => 'http://www.jameswbutts.com',
 );

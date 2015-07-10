@@ -35,7 +35,7 @@ class LoggerVariable
      */
     public function error($message = null, $force = false)
     {
-        return craft()->logger_log->createLog($message, 'error', $force);
+        return craft()->logger_log->createLog($message, 'error', $force, true);
     }
 
     /**
